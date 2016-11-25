@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 11:02:29 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 20:07:48 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/25 11:32:47 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/25 18:49:29 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(int ac, char **av)
+char	*ft_get_map(int fd)
 {
-	if (ac != 2)
-	{
-		ft_putendl("usage : fillit t_file");
-		return (0);
-	}
+	char		buf[BUFSIZE];
+	int			ret;
+	int			i;
+	static char		str[BUFSIZE + 1];
 
-	ft_putnbr(ft_get_pieces(ft_get_map(open(av[1], O_RDONLY))));
-	return (0);
+	i = 0;
+	if (fd == -1)
+	{
+		ft_putendl("open() error");
+		ft_exit();
+	}
+	while ((ret = read(fd, buf, BUFSIZE)))
+	{
+		buf[ret] = '\0';
+	}
+	while (buf[i])
+	{
+		str[i] = buf[i];
+		i++;
+	}
+	return (str);
 }

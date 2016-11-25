@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_get_pieces.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 11:02:29 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 20:07:48 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/25 20:12:17 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/25 20:23:05 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(int ac, char **av)
+int	ft_number_tminos(char *str)
 {
-	if (ac != 2)
-	{
-		ft_putendl("usage : fillit t_file");
-		return (0);
-	}
+	int	i;
+	int j;
+	int	pieces;
+	int	map;
 
-	ft_putnbr(ft_get_pieces(ft_get_map(open(av[1], O_RDONLY))));
-	return (0);
+	i = 0;
+	map = 0;
+	while (str[i])
+	{
+		j = 0;
+		pieces = 0;
+		while (j < 20)
+		{
+			if (str[i] == '#')
+				pieces++;
+			j++;
+			i++;
+		}
+		if (pieces != 4)
+			ft_exit();
+		i++;
+		map++;
+	}
+	return (map);
 }

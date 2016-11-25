@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 11:02:29 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 20:07:48 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/25 14:39:29 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/25 20:25:07 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(int ac, char **av)
+int	ft_check_map(char *str)
 {
-	if (ac != 2)
-	{
-		ft_putendl("usage : fillit t_file");
-		return (0);
-	}
+	int	i;
+	int	j;
+	int	o;
 
-	ft_putnbr(ft_get_pieces(ft_get_map(open(av[1], O_RDONLY))));
-	return (0);
+	i = 0;
+	o = 0;
+	while (str[i])
+	{
+		o = 0;
+		while (o < 4)
+		{
+			j = 0;
+			while (str[i] && j < 4)
+			{
+				if (str[i] != '.' && str[i] != '#')
+					ft_exit();
+				i++;
+				j++;
+			}
+			if (str[i] != '\n')
+				ft_exit();
+			o++;
+			i++;
+		}
+		i++;
+	}
+	if (str[i - 1] == '\n' && str[i - 2] == '\n')
+		ft_exit();
+	return (1);
 }
