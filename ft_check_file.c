@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:51:12 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/26 14:52:40 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/26 18:45:03 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ int	ft_check_file(char *str)
 			while (str[i] && j < 4)
 			{
 				if (str[i] != '.' && str[i] != '#')
-					ft_exit();
+					return (0);
 				i++;
 				j++;
 			}
 			if (str[i] != '\n')
-				ft_exit();
+				return (0);
 			o++;
 			i++;
 		}
 		i++;
 	}
 	if (str[i - 1] == '\n' && str[i - 2] == '\n')
-		ft_exit();
+		return (0);
 	return (1);
 }

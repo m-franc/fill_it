@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:52:58 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/26 14:53:25 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/26 18:52:01 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 char	*ft_get_file(int fd)
 {
-	char		buf[BUFSIZE];
-	int			ret;
-	int			i;
+	char			buf[BUFSIZE];
+	int				ret;
+	int				i;
 	static char		str[BUFSIZE + 1];
 
 	i = 0;
-	if (fd == -1)
-	{
-		ft_putendl("open() error");
-		ft_exit();
-	}
 	while ((ret = read(fd, buf, BUFSIZE)))
 	{
 		buf[ret] = '\0';

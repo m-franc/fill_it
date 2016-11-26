@@ -1,4 +1,4 @@
-Makefile/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
@@ -6,7 +6,7 @@ Makefile/* *********************************************************************
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 16:14:28 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/26 14:57:35 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/26 18:57:05 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,11 @@ Makefile/* *********************************************************************
 
 # define BUFSIZE 545
 
-typedef struct		m_list
-{
-	char			*ligne[4];
-	char			colonne[5];
-}					map;
-
-typedef struct		t_list
-{
-	struct i_list	*piece;
-	struct t_list	*next;
-	struct t_list	*prev;
-}					tminos;
-
-typedef struct		p_list
-{
-	char			*piece;
-	int				x;
-	int				y;
-}					piece;
-
-char				*ft_get_file(int fd);
-int					ft_check_file(char *str);
-void				ft_exit();
-int					ft_get_map(char *str);
+char		*ft_get_file(int fd);
+int			ft_check_file(char *str);
+void		ft_exit();
+int			ft_get_map(char *str);
+int			*ft_check_tminos(char *str, (*ft_tab_fct_check)(char *str));
+int			*ft_check(int fd);
 
 #endif

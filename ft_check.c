@@ -1,29 +1,29 @@
- /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 11:02:29 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/26 18:47:11 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/26 18:51:40 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(int ac, char **av)
+int		*ft_check(int fd)
 {
-	int	*tetris;
+	char	*file;
+	int		*tminos;
 
-	if (ac != 2)
-	{
-		ft_putendl("usage : fillit t_file");
+	if (fd == - 1)
 		return (0);
-	}
-	tetris = ft_check(open(av[1], O_RDONLY));
-	if (tetris == 0)
-		ft_exit();
-	else
-		// LETS TETRIS
+	file = ft_get_file(fd);
+	if (ft_check_file(file) == 0)
+		return (0);
+	tminos = ft_check_tminos(file, &get_id);
+	if (tminos == 0)
+		return (0);
+	return (tminos);
 }
