@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_map.c                                          :+:      :+:    :+:   */
+/*   ft_get_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 11:32:47 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 18:49:29 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/26 14:54:52 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/26 14:55:07 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_get_map(int fd)
+int	ft_get_map(char *str)
 {
-	char		buf[BUFSIZE];
-	int			ret;
-	int			i;
-	static char		str[BUFSIZE + 1];
+	int	i;
+	int j;
+	int	pieces;
+	int	map;
 
 	i = 0;
-	if (fd == -1)
+	map = 0;
+	while (str[i])
 	{
-		ft_putendl("open() error");
-		ft_exit();
-	}
-	while ((ret = read(fd, buf, BUFSIZE)))
-	{
-		buf[ret] = '\0';
-	}
-	while (buf[i])
-	{
-		str[i] = buf[i];
+		j = 0;
+		pieces = 0;
+		while (j < 20)
+		{
+			if (str[i] == '#')
+				pieces++;
+			j++;
+			i++;
+		}
+		if (pieces != 4)
+			ft_exit();
 		i++;
+		map++;
 	}
-	return (str);
+	return (map);
 }

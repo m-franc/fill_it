@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_pieces.c                                    :+:      :+:    :+:   */
+/*   ft_get_file.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 20:12:17 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 20:23:05 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/26 14:52:58 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/26 14:53:25 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	ft_number_tminos(char *str)
+char	*ft_get_file(int fd)
 {
-	int	i;
-	int j;
-	int	pieces;
-	int	map;
+	char		buf[BUFSIZE];
+	int			ret;
+	int			i;
+	static char		str[BUFSIZE + 1];
 
 	i = 0;
-	map = 0;
-	while (str[i])
+	if (fd == -1)
 	{
-		j = 0;
-		pieces = 0;
-		while (j < 20)
-		{
-			if (str[i] == '#')
-				pieces++;
-			j++;
-			i++;
-		}
-		if (pieces != 4)
-			ft_exit();
-		i++;
-		map++;
+		ft_putendl("open() error");
+		ft_exit();
 	}
-	return (map);
+	while ((ret = read(fd, buf, BUFSIZE)))
+	{
+		buf[ret] = '\0';
+	}
+	while (buf[i])
+	{
+		str[i] = buf[i];
+		i++;
+	}
+	return (str);
 }

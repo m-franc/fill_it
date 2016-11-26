@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+Makefile/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 16:14:28 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 20:34:54 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/26 14:57:35 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ typedef struct		p_list
 	int				y;
 }					piece;
 
-char				*ft_get_map(int fd);
-int					ft_check_map(char *str);
+char				*ft_get_file(int fd);
+int					ft_check_file(char *str);
 void				ft_exit();
-int					ft_get_tminos(char *str);
-int					ft_number_tminos(char *str);
+int					ft_get_map(char *str);
 
 #endif

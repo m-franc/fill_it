@@ -6,7 +6,7 @@
 #    By: mfranc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:24:51 by mfranc            #+#    #+#              #
-#    Updated: 2016/11/25 20:24:15 by mfranc           ###   ########.fr        #
+#    Updated: 2016/11/26 14:57:49 by mfranc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,12 @@ FLAGS = -Wall -Wextra -Werror
 
 LIB = -lft
 
-SRC = ft_get_map.c			\
+SRC = ft_get_file.c			\
 	  main.c				\
+	  ft_check_file.c		\
+	  ft_get_map.c			\
 	  ft_check_map.c		\
 	  ft_exit.c				\
-	  ft_number_tminos.c	\
 
 OBJ = $(SRCS:.c=.o )
 
