@@ -6,13 +6,13 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:51:21 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/25 18:53:31 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/27 18:40:02 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_exit()
+void	ft_exit(void)
 {
 	ft_putendl("error");
 	exit(1);

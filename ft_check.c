@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/26 21:07:09 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/27 18:38:22 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int		*ft_check(int fd)
 	char	*file;
 	int		*tminos;
 	int		*tab;
-	int	    (*get_id)(char *, int) = {ft_check_tminos1, ft_check_tminos2, 
+	int	    (*get_id)(char *, int);
+	
+	get_id = {ft_check_tminos1, ft_check_tminos2, 
 		ft_check_tminos3, ft_check_tminos4, ft_check_tminos6, ft_check_tminos7, 
 		ft_check_tminos8, ft_check_tminos9, ft_check_tminos10, 
 		ft_check_tminos11, ft_check_tminos12, ft_check_tminos13,
