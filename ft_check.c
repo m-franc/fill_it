@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 16:30:15 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/28 17:00:46 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		*ft_check(int fd)
 {
 	char			*file;
 	int				*tminos;
+
 	if (fd == - 1)
 		return (0);
 	file = ft_get_file(fd);
