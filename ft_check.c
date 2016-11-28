@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 17:44:10 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/28 18:09:19 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ int		*ft_check(int fd)
 	if (ft_check_file(file) == 0)
 		return (0);
 	nb_map = ft_get_map(file);
-	ft_putnbr(nb_map);
 	if (nb_map == 0)
 		return (0);
-//
-	ft_putendl("OK1");
-//
 	tminos = ft_check_map(file);
 	if (tminos == 0)
 		return (0);

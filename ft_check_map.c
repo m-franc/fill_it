@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 17:43:22 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/28 18:08:02 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		*ft_check_map(char *str)
 		start = i;
 		while (str[i] != '#')
 			i++;
-		tmp[o] = ft_check_tminos(str, i);	
+		tmp[o] = ft_check_tminos(str, i);
 		i = start + 21;
 		if (tmp[o] == 0)
 			return (0);
