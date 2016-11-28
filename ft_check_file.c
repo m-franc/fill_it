@@ -6,14 +6,17 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:51:12 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/27 18:52:55 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/28 15:24:50 by ajehanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_check_column(char *str, int j, int *i)
+int		ft_check_column(char *str, int *i)
 {
+	int j;
+
+	j = 0;
 	while (str[*i] && j < 4)
 	{
 		if (str[*i] != '.' && str[*i] != '#')
@@ -27,7 +30,6 @@ int		ft_check_column(char *str, int j, int *i)
 int		ft_check_file(char *str)
 {
 	int	i;
-	int	j;
 	int	o;
 
 	i = 0;
@@ -37,8 +39,7 @@ int		ft_check_file(char *str)
 		o = 0;
 		while (o < 4)
 		{
-			j = 0;
-			if (ft_check_column(str + i, j, &i) == 0)
+			if (ft_check_column(str, &i) == 0)
 				return (0);
 			if (str[i] != '\n')
 				return (0);
