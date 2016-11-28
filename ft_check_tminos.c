@@ -6,13 +6,13 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 17:03:27 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/28 17:43:03 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_check_tminos(char *str)
+int		ft_check_tminos(char *str, int i)
 {
 	int r;
 	int o;
@@ -31,6 +31,5 @@ int		ft_check_tminos(char *str)
 			r = t[o](str, i);
 		o++;
 	}
-	ft_putnbr(r);
 	return (r);
 }

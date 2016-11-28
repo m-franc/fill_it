@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 16:14:28 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 17:03:24 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/28 17:08:56 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_exit();
 int		ft_get_map(char *str);
 int		*ft_check_map(char *str);
 int		*ft_check(int fd);
-int		ft_check_tminos(char *str);
+int		ft_check_tminos(char *str, int i);
 int		ft_check_tminos1(char *str, int i);
 int		ft_check_tminos2(char *str, int i);
 int		ft_check_tminos3(char *str, int i);
