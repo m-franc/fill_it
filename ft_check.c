@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 20:40:26 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/29 17:15:56 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		*ft_check(int fd)
 	char			*file;
 	int				*tminos;
 	int				nb_map;
+	char			**tab;
 
 	if (fd == - 1)
 		return (0);
@@ -29,6 +30,6 @@ int		*ft_check(int fd)
 	tminos = ft_check_map(file);
 	if (tminos == 0)
 		return (0);
-	ft_settab(nb_map, tminos);
-	return (1);
+	ft_puttab(tab = ft_settab(nb_map));
+	return (tminos);
 }

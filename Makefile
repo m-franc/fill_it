@@ -6,7 +6,7 @@
 #    By: mfranc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:24:51 by mfranc            #+#    #+#              #
-#    Updated: 2016/11/28 17:10:45 by mfranc           ###   ########.fr        #
+#    Updated: 2016/11/29 18:01:33 by mfranc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,11 @@ SRC = ft_get_file.c				\
 	  ft_check_tminos_1_5.c		\
 	  ft_check_tminos_6_10.c	\
       ft_check_tminos_11_15.c	\
-	  ft_check_tminos_16_19.c
+	  ft_check_tminos_16_19.c	\
+	  ft_settab.c				\
+	  ft_columnnew.c			\
+	  ft_linenew.c				\
+  	  ft_setsizetab.c 
 
 OBJ = $(SRCS:.c=.o )
 
