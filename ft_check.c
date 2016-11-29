@@ -6,11 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2016/11/29 18:27:17 by ajehanno         ###   ########.fr       */
-=======
-/*   Updated: 2016/11/29 17:15:56 by mfranc           ###   ########.fr       */
->>>>>>> e2504ad807987d89d2a8093f8e116eacdb9fb506
+/*   Updated: 2016/11/29 18:54:54 by ajehanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +16,8 @@ int		*ft_check(int fd)
 {
 	char			*file;
 	int				*tminos;
-<<<<<<< HEAD
-=======
 	int				nb_map;
 	char			**tab;
->>>>>>> e2504ad807987d89d2a8093f8e116eacdb9fb506
 
 	if (fd == - 1)
 		return (0);
