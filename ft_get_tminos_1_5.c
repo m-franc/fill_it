@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*   ft_get_tminos_1_5.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 20:25:01 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/28 19:23:45 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/28 19:27:54 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*ft_check_map(char *str)
+char	*ft_get_tminos_1(int i)
 {
-	int				*ids_tminos;
-	int				i;
-	int				tmp[26];
-	int				o;
-	int				start;
+	if (i)
+		ft_putendl("##\n##");
+}
 
-	i = 0;
-	start = 0;
-	o = 0;
-	ids_tminos = tmp;
-	while (str[i])
-	{
-		start = i;
-		while (str[i] != '#')
-			i++;
-		tmp[o] = ft_check_tminos(str, i);
-		i = start + 21;
-		if (tmp[o] == 0)
-			return (0);
-		o++;
-	}
-	return (ids_tminos);
+char	*ft_get_tminos_2(int i)
+{
+	if (i)
+		ft_putendl("#\n#\n#\n#");
 }

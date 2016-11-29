@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*   ft_setsizetab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 20:25:01 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/29 16:22:34 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/29 17:59:28 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*ft_check_map(char *str)
+int	ft_set_size_tab(int nb_map)
 {
-	int				*ids_tminos;
-	int				i;
-	int				tmp[26];
-	int				o;
-	int				start;
-
-	i = 0;
-	start = 0;
-	o = 0;
-	ids_tminos = tmp;
-	while (str[i])
-	{
-		start = i;
-		while (str[i] != '#')
-			i++;
-		tmp[o] = ft_check_tminos(str, i);
-		i = start + 21;
-		if (tmp[o] == 0)
-			return (0);
-		o++;
-	}
-	return (ids_tminos);
+	if (nb_map == 1 || nb_map == 2 || nb_map == 3)
+		return (nb_map + 1);
+	else if (nb_map == 4)
+		return (4);
+	else if  (nb_map == 5 || nb_map == 6)
+		return (5);
+	else if (nb_map == 7 || nb_map == 8 || nb_map == 9)
+		return (6);
+	return (0);
 }

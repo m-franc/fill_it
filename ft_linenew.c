@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*   ft_linenew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 20:25:01 by mfranc           ###   ########.fr       */
+/*   Created: 2016/11/29 16:56:26 by mfranc            #+#    #+#             */
+/*   Updated: 2016/11/29 17:05:14 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*ft_check_map(char *str)
+char	*ft_linenew(size_t n, int c)
 {
-	int				*ids_tminos;
-	int				i;
-	int				tmp[26];
-	int				o;
-	int				start;
+	char	*str;
+	size_t	i;
 
 	i = 0;
-	start = 0;
-	o = 0;
-	ids_tminos = tmp;
-	while (str[i])
-	{
-		start = i;
-		while (str[i] != '#')
-			i++;
-		tmp[o] = ft_check_tminos(str, i);
-		i = start + 21;
-		if (tmp[o] == 0)
-			return (0);
-		o++;
-	}
-	return (ids_tminos);
+	if (!(str = (char*)malloc(sizeof(char) * n + 1)))
+		return (NULL);
+	while (i <= n)
+		str[i++] = (char)c;
+	return (str);
 }
