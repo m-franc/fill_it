@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 16:10:44 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/30 12:02:06 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/30 12:32:21 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	**ft_settab(int size/*, int *tminos*/)
 	if (tab == NULL)
 		return (NULL);
 //	tminos = puttab(tminos, tab);
-	ft_putstr("COOL");
 	ft_puttab(tab);
 	return (tab);
 }
@@ -31,6 +30,7 @@ char	**ft_settab(int size/*, int *tminos*/)
 /*char	*puttab(int *tminos, char **tab)
 {
 	char	*select;
+	
 
 	
 }*/
