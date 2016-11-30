@@ -18,6 +18,6 @@ char	**ft_check(int fd)
 	tminos = ft_check_map(file);
 	if (tminos == 0)
 		return (0);
-	tab = ft_settab(nb_map/*, tminos*/);
+	tab = ft_settab(nb_map, tminos);
 	return (tab);
 }

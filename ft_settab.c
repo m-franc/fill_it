@@ -1,36 +1,58 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_settab.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/29 16:10:44 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/30 12:32:21 by mfranc           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fillit.h"
 
-char	**ft_settab(int size/*, int *tminos*/)
+char	**ft_settab(int size, int *tminos)
 {
 	int		sizetab;
-	char	**tab;
-//	char	*pieces;
-	
+	char	**grid;	
+	int		*copy;
+
+	copy = ft_memcpy(copy, tminos, size);
 	sizetab = ft_set_size_tab(size);
-	tab = ft_columnew(sizetab);
-	if (tab == NULL)
+	grid = ft_columnew(sizetab);
+	if (grid == NULL)
 		return (NULL);
-//	tminos = puttab(tminos, tab);
+	ft_puttminos(copy, &grid, size);
 	ft_puttab(tab);
 	return (tab);
 }
 
-/*char	*puttab(int *tminos, char **tab)
-{
-	char	*select;
-	
+// Premiere fonction de l'algo, le tableau d;is des tminos, pour aller chercher les fonctions correspondantes pour remplir le tableau, le taille du tableau pour incrementer...'
 
-	
-}*/
+char	**ft_puttminos(int *copy, char **tab, int size)
+{
+	int	x;
+	int	y;
+	int	i;
+
+	y = 0;
+	i = 0;
+	while (tab[y])
+	{
+		x = 0;
+		while (tab[y][x])
+		{
+			if (tab[y][x] == '.')
+			{	
+				while (i < size)
+				{}
+				ft_gettminos(copy[i], &tab, &x, &y);
+			}
+			x++;
+		}
+		y++;
+	}
+	return (tab);
+}
+
+int		ft_gettminos(int id, char ***tab, int *x, int *y)
+{
+	int	o;
+
+	o = 0;
+	while (o < 20)
+	{
+		
+	}
+}
+
+
