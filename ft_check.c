@@ -6,13 +6,13 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 18:02:55 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/29 18:56:41 by ajehanno         ###   ########.fr       */
+/*   Updated: 2016/11/30 17:35:33 by ajehanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*ft_check(int fd)
+char	**ft_check(int fd)
 {
 	char			*file;
 	int				*tminos;
@@ -30,6 +30,6 @@ int		*ft_check(int fd)
 	tminos = ft_check_map(file);
 	if (tminos == 0)
 		return (0);
-	ft_puttab(tab = ft_settab(nb_map));
-	return (tminos);
+	tab = ft_settab(nb_map/*, tminos*/);
+	return (tab);
 }

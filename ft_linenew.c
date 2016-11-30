@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 16:56:26 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/29 17:05:14 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/30 14:24:56 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_linenew(size_t n, int c)
 	i = 0;
 	if (!(str = (char*)malloc(sizeof(char) * n + 1)))
 		return (NULL);
-	while (i <= n)
+	while (i < n)
 		str[i++] = (char)c;
+	str[i] = '\0';
 	return (str);
 }
