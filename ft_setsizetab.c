@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 16:22:34 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/30 12:52:50 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/11/30 15:03:14 by ajehanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 int	ft_set_size_tab(int nb_map)
 {
-	if (nb_map == 1 || nb_map == 2 || nb_map == 3)
-		return (nb_map + 1);
-	else if (nb_map == 4)
-		return (4);
-	else if  (nb_map == 5 || nb_map == 6)
-		return (5);
-	else if (nb_map == 7 || nb_map == 8 || nb_map == 9)
-		return (6);
-	else
-		return (nb_map + 1);
+	int tab[27];
+
+	tab = {NULL, 2, 3, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 
+	10, 10, 10, 10, 11, 11};
+	return (tab[nb_map]);
 }
