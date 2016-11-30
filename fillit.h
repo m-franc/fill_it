@@ -15,11 +15,14 @@ void	ft_exit();
 int		ft_get_map(char *str);
 int		*ft_check_map(char *str);
 char	**ft_check(int fd);
-char	**ft_settab(int size/*, int *tminos*/);
-char	*puttab(int *tminos, char **tab);
+
+char	**ft_settab(int size, int *tminos, int sizetab);
+void	ft_puttminos(int *tminos, char **tab);
+char	*ft_gettminos(int id, int i);
 int		ft_set_size_tab(int nb_map);
 char	**ft_columnew(size_t n);
 char	*ft_linenew(size_t n, int c);
+
 int		ft_check_tminos(char *str, int i);
 int		ft_check_tminos1(char *str, int i);
 int		ft_check_tminos2(char *str, int i);
