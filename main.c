@@ -14,4 +14,5 @@ int		main(int ac, char **av)
 	tetris = ft_check(open(av[1], O_RDONLY));
 	if (tetris == 0)
 		ft_exit();
+	free(tetris);
 }

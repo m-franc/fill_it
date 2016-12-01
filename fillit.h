@@ -16,9 +16,9 @@ int		ft_get_map(char *str);
 int		*ft_check_map(char *str);
 char	**ft_check(int fd);
 
-char	**ft_settab(int size, int *tminos, int sizetab);
-void	ft_puttminos(int *tminos, char **tab);
-char	*ft_gettminos(int id, int i);
+char	**ft_settab(int size, int *tminos);
+char	**ft_puttminos(int *copy, char **tab, int size);
+int		ft_gettminos(int id, ***tab, int *x, int *y);
 int		ft_set_size_tab(int nb_map);
 char	**ft_columnew(size_t n);
 char	*ft_linenew(size_t n, int c);
