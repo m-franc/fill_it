@@ -1,6 +1,6 @@
 #include "fillit.h"
 
-int		ft_can_write(int id, char ***tab, int x, int y)
+int		ft_can_write(int id, int o, t_place ****p)
 {
 	C * t[] = {ft_can_write1, ft_can_write2, ft_can_write3,
 	ft_can_write4, ft_can_write5, ft_can_write6, ft_can_write7,
@@ -8,29 +8,40 @@ int		ft_can_write(int id, char ***tab, int x, int y)
    	ft_can_write12, ft_can_write13, ft_can_write14, 
 	ft_can_write15,	ft_can_write16, ft_can_write17, 
 	ft_can_write18, ft_can_write19}
-	if (t[id - 1](char ***tab, int x, int y) == 1)
+	if (t[id - 1](o, &p) == 1)
 		return (1);
 	return (0); 
 }
 
-int		ft_can_write1(char ***tab, int x, int y)
+int		ft_can_write1(int o, t_place *****place)
 {
-	if (tab[y][x + 1] != '.' || tab[y + 1][x] != '.' || tab[y + 1][x + 1] != '.')
+	if (p->tab[p->y][p->x + 1] != '.' || p->tab[p->y + 1][p->x] != '.' || p->tab[p->y + 1][p->x + 1] != '.')
 		return (0);
-	tab[y][x] = '1';
+	p->tab[p->y][p->x] = 'A' + o;
+	p->tab[p->y][p->x + 1] = 'A' + o;
+	p->tab[p->y + 1][p->x] = 'A' + o;
+	p->tab[p->y + 1][p->x + 1] = 'A' + o;
 	return (1);
 }
 
-int		ft_can_write2(char ***tab, int x, int y)
+int		ft_can_write1(int o, t_place *****place)
 {
-	if (tab[y + 1][x] != '.' || tab[y + 2][x] != '.' || tab[y + 3][x] != '.')
+	if (p->tab[p->y + 1][p->x] != '.' || p->tab[p->y + 2][p->x] != '.' || p->tab[p->y + 3][p->x] != '.')
 		return (0);
+	p->tab[p->y][p->x] = 'A' + o;
+	p->tab[p->y + 1][p->x] = 'A' + o;
+	p->tab[p->y + 2][p->x] = 'A' + o;
+	p->tab[p->y + 3][p->x] = 'A' + o;
 	return (1);
 }
 
-int		ft_can_write3(char ***tab, int x, int y)
+int		ft_can_write1(int o, t_place *****place)
 {
-	if (tab[y][x + 1] != '.' || tab[y][x + 2] != '.' || tab[y][x + 3] != '.')
+	if (p->tab[p->y + 1][p->x] != '.' || p->tab[p->y][p->x + 2] != '.' || p->tab[p->y][p->x + 3] != '.')
 		return (0);
+	p->tab[p->y][p->x] = 'A' + o;
+	p->tab[p->y][p->x + 1] = 'A' + o;
+	p->tab[p->y][p->x + 2] = 'A' + o;
+	p->tab[p->y][p->x + 3] = 'A' + o;
 	return (1);
 }
