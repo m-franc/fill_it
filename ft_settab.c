@@ -23,19 +23,34 @@ char	**ft_puttminos(int *copy, char **tab, int size)
 	int	x;
 	int	y;
 	int	i;
+	int tmp;
 
 	y = 0;
 	i = 0;
+	tmp = 0;
 	while (tab[y])
 	{
 		x = 0;
 		while (tab[y][x])
 		{
 			if (tab[y][x] == '.')
-			{	
-				while (i < size)
-				{}
-				ft_gettminos(copy[i], &tab, &x, &y);
+			{
+				i = 0;
+				tmp = 0;
+				while (tmp == 0 && i < size)
+				{
+					//				ft_gettminos(copy[i], &tab, &x, &y);
+					if (copy[i] != 0)
+					{
+						tmp = ft_can_write(copy[i], &tab, &x, &y);
+						if (tmp == 1)
+						{
+							ft_puttminos_2(i, &tab, &x, &y);
+							copy[i] = 0;
+						}
+					}
+					i++;
+				}
 			}
 			x++;
 		}
@@ -43,16 +58,4 @@ char	**ft_puttminos(int *copy, char **tab, int size)
 	}
 	return (tab);
 }
-
-int		ft_gettminos(int id, char ***tab, int *x, int *y)
-{
-	int	o;
-
-	o = 0;
-	while (o < 20)
-	{
-		
-	}
-}
-
 

@@ -8,6 +8,7 @@
 # define BUFSIZE 545
 
 typedef int F(char *, int);
+typedef int C(int id, char ***tab, int x, int y);
 
 char	*ft_get_file(int fd);
 int		ft_check_file(char *str);
