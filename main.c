@@ -3,16 +3,15 @@
 
 int		main(int ac, char **av)
 {
-	char	**tetris;
-//	char	**lauch;
+	int		ok;
 
 	if (ac != 2)
 	{
 		ft_putendl("usage : fillit t_file");
 		return (0);
 	}
-	tetris = ft_check(open(av[1], O_RDONLY));
-	if (tetris == 0)
+	ok = ft_check(open(av[1], O_RDONLY));
+	if (ok == 0)
 		ft_exit();
 	free(tetris);
 }

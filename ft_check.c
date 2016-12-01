@@ -1,11 +1,11 @@
 #include "fillit.h"
 
-char	**ft_check(int fd)
+int		ft_check(int fd)
 {
 	char			*file;
 	int				*tminos;
 	int				nb_map;
-	char			**tab;
+	int				sizetab;
 
 	if (fd == - 1)
 		return (0);
@@ -18,6 +18,7 @@ char	**ft_check(int fd)
 	tminos = ft_check_map(file);
 	if (tminos == 0)
 		return (0);
-	tab = ft_settab(nb_map, tminos);
-	return (tab);
+	sizetab = ft_set_size_tab(nb_map);
+	ft_settab(nb_map, tminos, sizetab);
+	return (1);
 }

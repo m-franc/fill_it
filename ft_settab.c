@@ -1,61 +1,61 @@
 #include "fillit.h"
 
-char	**ft_settab(int size, int *tminos)
+void	ft_settab(int size, int *tminos, int sizetab)
 {
 	int		sizetab;
-	char	**grid;	
 	int		*copy;
+	t_place	*p;
 
 	copy = ft_memcpy(copy, tminos, size);
-	sizetab = ft_set_size_tab(size);
-	grid = ft_columnew(sizetab);
-	if (grid == NULL)
+	p->tab = ft_columnew(sizetab);
+	if (p->tab == NULL)
 		return (NULL);
-	ft_puttminos(copy, &grid, size);
-	ft_puttab(tab);
-	return (tab);
+	p->x = 0;
+	p->y = 0;
+	if (ft_check_tab(&copy, &p, size) == 0)
+		ft_settab(size, tminos, sizetab++);
+	ft_puttab(p->tab);
+	free(p->tab);
 }
 
-// Premiere fonction de l'algo, le tableau d;is des tminos, pour aller chercher les fonctions correspondantes pour remplir le tableau, le taille du tableau pour incrementer...'
-
-char	**ft_puttminos(int *copy, char **tab, int size)
+int		ft_check_tab(int **copy, t_place **p, int size)
 {
-	int	x;
-	int	y;
-	int	i;
-	int tmp;
+	int	write;
 
-	y = 0;
-	i = 0;
-	tmp = 0;
-	while (tab[y])
+	write = 0;
+	while ((*p)->tab[(*p)->y])
 	{
-		x = 0;
-		while (tab[y][x])
+		p->x = 0;
+		while ((*p)->tab[(*p)->y][(*p)->x])
 		{
-			if (tab[y][x] == '.')
+			if ((*p)->tab[(*p)->y][(*p)->x] == '.')
 			{
-				i = 0;
-				tmp = 0;
-				while (tmp == 0 && i < size)
-				{
-					//				ft_gettminos(copy[i], &tab, &x, &y);
-					if (copy[i] != 0)
-					{
-						tmp = ft_can_write(copy[i], &tab, &x, &y);
-						if (tmp == 1)
-						{
-							ft_puttminos_2(i, &tab, &x, &y);
-							copy[i] = 0;
-						}
-					}
-					i++;
-				}
+			 	if (ft_puttminos(&copy, &p, size) == 1)
+					write++;
 			}
-			x++;
+			p->x++;
 		}
-		y++;
+		p->y++;
 	}
-	return (tab);
+	if (write == size)
+		return (1);
+	else
+		return (0);
 }
 
+int		ft_puttminos(int ***copy, t_place ***p, int size)
+{
+	int	o;
+
+	o = 0;
+	while (o < size)
+	{
+		if (ft_can_write(**copy[o], o, &p) == 1)
+		{
+			**copy[o] = 0;	
+			return (1);
+		}
+		o++;
+	}
+	return (0);
+}
