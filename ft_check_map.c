@@ -6,32 +6,32 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/11/28 20:25:01 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/12/02 21:03:13 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*ft_check_map(char *str)
+int		*ft_check_map(char *str, int nb_map)
 {
 	int				*ids_tminos;
 	int				i;
-	int				tmp[26];
 	int				o;
 	int				start;
 
 	i = 0;
 	start = 0;
 	o = 0;
-	ids_tminos = tmp;
+	if (!(ids_tminos = (int*)malloc(sizeof(int) * nb_map)))
+		return (NULL);
 	while (str[i])
 	{
 		start = i;
 		while (str[i] != '#')
 			i++;
-		tmp[o] = ft_check_tminos(str, i);
+		ids_tminos[o] = ft_check_tminos(str, i);
 		i = start + 21;
-		if (tmp[o] == 0)
+		if (ids_tminos[o] == 0)
 			return (0);
 		o++;
 	}

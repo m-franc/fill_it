@@ -15,7 +15,8 @@ int		ft_check(int fd)
 	nb_map = ft_get_map(file);
 	if (nb_map == 0)
 		return (0);
-	tminos = ft_check_map(file);
+	tminos = ft_check_map(file, nb_map);
+
 	if (tminos == 0)
 		return (0);
 	sizetab = ft_set_size_tab(nb_map);
