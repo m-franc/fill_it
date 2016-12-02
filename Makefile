@@ -6,7 +6,7 @@
 #    By: mfranc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:24:51 by mfranc            #+#    #+#              #
-#    Updated: 2016/11/29 18:01:33 by mfranc           ###   ########.fr        #
+#    Updated: 2016/12/02 15:02:59 by mfranc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,11 @@ SRC = ft_get_file.c				\
 	  ft_settab.c				\
 	  ft_columnnew.c			\
 	  ft_linenew.c				\
-  	  ft_setsizetab.c 
+  	  ft_setsizetab.c			\
+	  ft_can_write_1_3+19.c		\
+	  ft_can_write_4_8.c		\
+	  ft_can_write_9_13.c		\
+	  ft_can_write_14_18.c	
 
 OBJ = $(SRCS:.c=.o )
 
