@@ -6,7 +6,7 @@
 #    By: mfranc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:24:51 by mfranc            #+#    #+#              #
-#    Updated: 2016/12/02 18:42:42 by mfranc           ###   ########.fr        #
+#    Updated: 2016/12/06 15:51:45 by mfranc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,11 @@ SRC = ft_get_file.c				\
 	  ft_can_write_1_3+19.c		\
 	  ft_can_write_4_8.c		\
 	  ft_can_write_9_13.c		\
-	  ft_can_write_14_18.c	
+	  ft_can_write_14_18.c		\
+  	  ft_delete_1_3+19.c		\
+  	  ft_delete_4_8.c			\
+  	  ft_delete_9_13.c			\
+	  ft_delete_14_18.c		  
 
 OBJ = $(SRCS:.c=.o )
 

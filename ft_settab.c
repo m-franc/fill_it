@@ -59,7 +59,7 @@ int		ft_check_tab(t_place *p, int size)
 		while (o < size)
 		{
 			tmp = p->ids[o];
-			if (ft_can_write(tmp, o, p) == 1)
+			if (ft_can_write(tmp, o, x, y, p) == 1)
 				return (1);
 			o++;
 		}
