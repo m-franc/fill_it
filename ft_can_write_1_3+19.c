@@ -15,6 +15,8 @@ int		ft_can_write(int id, int o, t_place *p)
 
 int		ft_can_write1(int o, t_place *p)
 {
+	if (p->x + 1 >= p->max || p->y + 1 >= p->max)
+		return (0);
 	if (p->tab[p->y][p->x + 1] != '.' 
 			|| p->tab[p->y + 1][p->x] != '.' 
 			|| p->tab[p->y + 1][p->x + 1] != '.')
@@ -28,6 +30,8 @@ int		ft_can_write1(int o, t_place *p)
 
 int		ft_can_write2(int o, t_place *p)
 {
+	if (p->y + 1 >= p->max || p->y + 2 >= p->max || p->y + 3 >= p->max)
+		return (0);
 	if (p->tab[p->y + 1][p->x] != '.' 
 			|| p->tab[p->y + 2][p->x] != '.' 
 			|| p->tab[p->y + 3][p->x] != '.')
@@ -41,7 +45,9 @@ int		ft_can_write2(int o, t_place *p)
 
 int		ft_can_write3(int o, t_place *p)
 {
-	if (p->tab[p->y + 1][p->x] != '.' 
+	if (p->x + 1 >= p->max || p->x + 2 >= p->max || p->x + 3 >= p->max)
+		return (0);
+	if (p->tab[p->y][p->x + 1] != '.' 
 			|| p->tab[p->y][p->x + 2] != '.' 
 			|| p->tab[p->y][p->x + 3] != '.')
 		return (0);
@@ -54,6 +60,8 @@ int		ft_can_write3(int o, t_place *p)
 
 int		ft_can_write19(int o, t_place *p)
 {
+	if (p->y + 1 >= p->max || p->y + 2 >= p->max || p->x + 1 >= p->max)
+		return (0);
 	if (p->tab[p->y + 1][p->x] != '.' 
 			|| p->tab[p->y + 1][p->x + 1] != '.' 
 			|| p->tab[p->y + 2][p->x] != '.')

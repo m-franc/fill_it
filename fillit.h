@@ -11,6 +11,7 @@ typedef struct	s_struct
 {
 	char	**tab;
 	int		*ids;
+	int		max;
 	int		x;
 	int		y;
 }				t_place;

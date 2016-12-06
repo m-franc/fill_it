@@ -1,5 +1,6 @@
 #include "fillit.h"
 
+#include <stdio.h>
 int		ft_check(int fd)
 {
 	char			*file;
@@ -16,7 +17,6 @@ int		ft_check(int fd)
 	if (nb_map == 0)
 		return (0);
 	tminos = ft_check_map(file, nb_map);
-
 	if (tminos == 0)
 		return (0);
 	sizetab = ft_set_size_tab(nb_map);
