@@ -12,10 +12,6 @@ void	ft_settab(int size, int *tminos, int sizetab)
 			p->x = 0;
 			p->y = 0;
 			p->ids = tminos;
-			printf("%d\n", p->ids[0]);
-			printf("%d\n", p->ids[1]);
-			printf("%d\n", p->ids[2]);
-			printf("%d\n", p->ids[3]);
 			p->max= sizetab;
 			if (ft_check_tab(p, size) == 1)
 				ft_puttab(p->tab);
