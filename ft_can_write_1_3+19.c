@@ -1,7 +1,9 @@
 #include "fillit.h"
 
-int		ft_can_write(int id, int o, int x, int y, t_place *p)
+int		ft_can_write(int o, int x, int y, t_place *p)
 {
+	int	id;
+
 	id = p->ids[o];
 
 	C * tv[] = {ft_can_write1, ft_can_write2, ft_can_write3,

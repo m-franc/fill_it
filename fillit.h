@@ -12,8 +12,7 @@ typedef struct	s_struct
 	char	**tab;
 	int		*ids;
 	int		max;
-	int		x;
-	int		y;
+	int		size;
 }				t_place;
 
 typedef int 	F(char *, int);
@@ -27,14 +26,17 @@ int				ft_get_map(char *str);
 int				*ft_check_map(char *str, int nb_map);
 int				ft_check(int fd);
 
-void			ft_settab(int size, int *tminos, int sizetab);
-int				ft_check_tab(t_place *p, int size);
-int				ft_puttminos(t_place *p, int size);
 int				ft_set_size_tab(int nb_map);
 char			**ft_columnew(size_t n);
 char			*ft_linenew(size_t n, int c);
 
-int				ft_can_write(int id, int o, int x, int y, t_place *p);
+void			ft_settab(int size, int *tminos, int sizetab);
+int				ft_prepare_tab(t_place *p, int *tminos, int sizetab, int size);
+int				ft_select_tminos(t_place *p, int x, int y, int o);
+int				ft_select_place(t_place *p, int x, int y, int o);
+int				ft_puttminos(t_place *p, int x, int y, int o);
+
+int				ft_can_write(int o, int x, int y, t_place *p);
 int				ft_can_write1(int o, int x, int y, t_place *p);
 int				ft_can_write2(int o, int x, int y, t_place *p);
 int				ft_can_write3(int o, int x, int y, t_place *p);

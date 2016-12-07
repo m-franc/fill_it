@@ -53,10 +53,10 @@ int	ft_can_write7(int o, int x, int y, t_place *p)
 			|| p->tab[y][x + 2] != '.' 
 			|| p->tab[y + 1][x + 2] != '.')
 		return (0);
-	p->tab[y][x] = 'C' + o;
-	p->tab[y][x + 1] = 'C' + o;
-	p->tab[y][x + 2] = 'C' + o;
-	p->tab[y + 1][x + 2] = 'C' + o;
+	p->tab[y][x] = 'A' + o;
+	p->tab[y][x + 1] = 'A' + o;
+	p->tab[y][x + 2] = 'A' + o;
+	p->tab[y + 1][x + 2] = 'A' + o;
 	return (1);
 }
 

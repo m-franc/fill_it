@@ -3,61 +3,77 @@
 
 void	ft_settab(int size, int *tminos, int sizetab)
 {
+	int		x;
+	int		y;
 	t_place	*p;
+	int		prepare;
+	int		o;
+
 	if ((p = malloc(sizeof(t_list))) != 0)
 	{
 		p->tab = ft_columnew(sizetab);
 		if (p->tab != NULL)
 		{
-			p->x = 0;
-			p->y = 0;
-			p->ids = tminos;
-			p->max= sizetab;
-			if (ft_check_tab(p, size) == 1)
-				ft_puttab(p->tab);
-			else
-				ft_settab(size, tminos, sizetab + 1);
+			x = 0;
+			y = 0;
+			o = 0;
+			if ((prepare = ft_prepare_tab(p, tminos, sizetab, size)) == 1)
+			{
+				if (ft_select_place(p, x, y, o)  == 1)
+					ft_puttab(p->tab);
+				else
+					ft_settab(size, tminos, sizetab + 1);
+			}
 		}
+		free(p->tab);
 	}
-	free(p->tab);
 }
 
-int		ft_check_tab(t_place *p, int size)
-{
-	int	write;
+int		ft_prepare_tab(t_place *p, int *tminos, int sizetab, int size)
+{	
+	int	i;
 
-	write = 0;
-	while (p->tab[p->y])
+	i = 0;
+	p->ids = tminos;
+	p->max= sizetab;
+	p->size = size;
+	return (1);
+}
+
+int		ft_select_place(t_place *p, int x, int y, int o)
+{
+	if (o == p->size)
+		return (1);
+	y = 0;
+	while (p->tab[y])
 	{
-		p->x = 0;
-		while (p->tab[p->y][p->x])
+		x = 0;
+		while (p->tab[y][x])
 		{
-			if (p->tab[p->y][p->x] == '.')
+			if (p->tab[y][x] == '.')
 			{
-				if (ft_puttminos(p, size) == 1)
-					write++;
-				if (write == size)
-					return (1);
+				if (ft_puttminos(p, x, y, o) == 1)
+				{
+					if (ft_select_place(p, 0, 0, o + 1) != 1)
+						ft_delete(o, x, y, p);
+					else
+						return (1);
+				}
 			}
-			p->x++;
+			x++;
 		}
-		p->y++;
+		y++;
 	}
 	return (0);
 }
 
-	int		ft_puttminos(t_place *p, int size)
+int		ft_puttminos(t_place *p, int x, int y, int o)
+{
+	if (ft_can_write(o, x, y, p) == 1)
 	{
-		int	o;
-		int tmp;
-
-		o = 0;
-		while (o < size)
-		{
-			tmp = p->ids[o];
-			if (ft_can_write(tmp, o, x, y, p) == 1)
-				return (1);
-			o++;
-		}
-		return (0);
+		ft_puttab(p->tab);
+		ft_putchar('\n');
+		return (1);
 	}
+	return (0);
+}
