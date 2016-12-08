@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   backtrack.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehanno <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/08 12:39:42 by ajehanno          #+#    #+#             */
+/*   Updated: 2016/12/08 16:31:37 by ajehanno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 void	ft_prepare(t_place *p, int *tminos, int sizetab, int size)
@@ -49,7 +61,7 @@ void	ft_settab(int size, int *tminos, int sizetab)
 	if (p.tab != 0)
 	{
 		ft_prepare(&p, tminos, sizetab, size);
-		if (test_backtrack_1st_dim(&p, x, y, o) == 1)
+		if (backtrack(&p, x, y, o) == 1)
 			ft_puttab(p.tab);
 		else
 			ft_settab(size, tminos, sizetab + 1);
