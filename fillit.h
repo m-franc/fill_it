@@ -12,12 +12,12 @@ typedef struct	s_struct
 	char	**tab;
 	int		*ids;
 	int		max;
-	int		x;
-	int		y;
+	int		size;
+	int		write;
 }				t_place;
 
-typedef int 	F(char *, int);
-typedef int 	C(int o, int x, int y, t_place *p);
+typedef int		F(char *str, int i);
+typedef int		C(int o, int x, int y, t_place *p);
 typedef void	D(int x, int y, t_place *p);
 
 char			*ft_get_file(int fd);
@@ -28,13 +28,13 @@ int				*ft_check_map(char *str, int nb_map);
 int				ft_check(int fd);
 
 void			ft_settab(int size, int *tminos, int sizetab);
-int				ft_check_tab(t_place *p, int size);
-int				ft_puttminos(t_place *p, int size);
+int				test_backtrack_1st_dim(t_place *p, int x, int y, int o);
+int				sous_sous_backtrack(t_place *p, int x, int y, int o);
 int				ft_set_size_tab(int nb_map);
-char			**ft_columnew(size_t n);
-char			*ft_linenew(size_t n, int c);
+void			ft_prepare(t_place *p, int *tminos, int sizetab, int size);
+char			**ft_build_tab(int sizetab, int x, int y);
 
-int				ft_can_write(int id, int o, int x, int y, t_place *p);
+int				ft_can_write(int o, int x, int y, t_place *p);
 int				ft_can_write1(int o, int x, int y, t_place *p);
 int				ft_can_write2(int o, int x, int y, t_place *p);
 int				ft_can_write3(int o, int x, int y, t_place *p);
