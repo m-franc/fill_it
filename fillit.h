@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehanno <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/08 15:03:51 by ajehanno          #+#    #+#             */
+/*   Updated: 2016/12/08 19:25:27 by mfranc           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 
 # define FILLIT_H
@@ -13,11 +25,8 @@ typedef struct	s_struct
 	int		*ids;
 	int		max;
 	int		size;
+	int		write;
 }				t_place;
-
-typedef int 	F(char *, int);
-typedef int 	C(int o, int x, int y, t_place *p);
-typedef void	D(int x, int y, t_place *p);
 
 char			*ft_get_file(int fd);
 int				ft_check_file(char *str);
@@ -26,15 +35,12 @@ int				ft_get_map(char *str);
 int				*ft_check_map(char *str, int nb_map);
 int				ft_check(int fd);
 
-int				ft_set_size_tab(int nb_map);
-char			**ft_columnew(size_t n);
-char			*ft_linenew(size_t n, int c);
-
 void			ft_settab(int size, int *tminos, int sizetab);
-int				ft_prepare_tab(t_place *p, int *tminos, int sizetab, int size);
-int				ft_select_tminos(t_place *p, int x, int y, int o);
-int				ft_select_place(t_place *p, int x, int y, int o);
-int				ft_puttminos(t_place *p, int x, int y, int o);
+int				backtrack(t_place *p, int x, int y, int o);
+int				under_backtrack(t_place *p, int x, int y, int o);
+int				ft_set_size_tab(int nb_map);
+void			ft_prepare(t_place *p, int *tminos, int sizetab, int size);
+char			**ft_build_tab(int sizetab, int x, int y);
 
 int				ft_can_write(int o, int x, int y, t_place *p);
 int				ft_can_write1(int o, int x, int y, t_place *p);
@@ -98,5 +104,11 @@ int				ft_check_tminos16(char *str, int i);
 int				ft_check_tminos17(char *str, int i);
 int				ft_check_tminos18(char *str, int i);
 int				ft_check_tminos19(char *str, int i);
+
+typedef	int		(*t_find)(char *str, int i);
+
+typedef	int		(*t_can)(int o, int x, int y, t_place *p);
+
+typedef	void	(*t_del)(int x, int y, t_place *p);
 
 #endif
