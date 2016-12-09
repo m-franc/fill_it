@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 18:38:45 by mfranc            #+#    #+#             */
-/*   Updated: 2016/12/09 14:41:06 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/12/09 14:45:30 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_check_tminos11(char *str, int i, int max)
 	return (11);
 }
 
-int		ft_check_tminos12(char *str, int i)
+int		ft_check_tminos12(char *str, int i, int max)
 {
 	if (i + 1 > max || i + 6 > max || i + 7 > max)
 		return (0);
@@ -30,7 +30,7 @@ int		ft_check_tminos12(char *str, int i)
 	return (12);
 }
 
-int		ft_check_tminos13(char *str, int i)
+int		ft_check_tminos13(char *str, int i, int max)
 {
 	if (i + 5 > max || i + 4 > max || i + 9 > max)
 		return (0);
@@ -39,7 +39,7 @@ int		ft_check_tminos13(char *str, int i)
 	return (13);
 }
 
-int		ft_check_tminos14(char *str, int i)
+int		ft_check_tminos14(char *str, int i, int max)
 {
 	if (i + 1 > max || i + 5 > max || i + 4 > max)
 		return (0);
@@ -48,7 +48,7 @@ int		ft_check_tminos14(char *str, int i)
 	return (14);
 }
 
-int		ft_check_tminos15(char *str, int i)
+int		ft_check_tminos15(char *str, int i, int max)
 {
 	if (i + 5 > max || i + 6 > max || i + 11 > max)
 		return (0);
