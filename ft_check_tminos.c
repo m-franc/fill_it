@@ -6,7 +6,7 @@
 /*   By: mfranc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 14:57:19 by mfranc            #+#    #+#             */
-/*   Updated: 2016/12/08 16:26:16 by ajehanno         ###   ########.fr       */
+/*   Updated: 2016/12/09 14:48:37 by ajehanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ t_find	g_t[] =
 	ft_check_tminos19,
 };
 
-int		ft_check_tminos(char *str, int i)
+int		ft_check_tminos(char *str, int i, int max)
 {
 	int r;
 	int o;
 
 	r = 0;
 	o = 0;
-	while (o < 19)
+	while (o < 19 && r == 0)
 	{
-		if (g_t[o](str, i) > r)
+		if (g_t[o](str, i, max) != 0)
 		{
-			r = g_t[o](str, i);
+			r = g_t[o](str, i, max);
 		}
 		o++;
 	}

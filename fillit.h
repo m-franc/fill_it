@@ -6,7 +6,7 @@
 /*   By: ajehanno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 15:03:51 by ajehanno          #+#    #+#             */
-/*   Updated: 2016/12/09 12:27:40 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/12/09 14:43:57 by ajehanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,28 +84,28 @@ void			ft_delete17(int x, int y, t_place *p);
 void			ft_delete18(int x, int y, t_place *p);
 void			ft_delete19(int x, int y, t_place *p);
 
-int				ft_check_tminos(char *str, int i);
-int				ft_check_tminos1(char *str, int i);
-int				ft_check_tminos2(char *str, int i);
-int				ft_check_tminos3(char *str, int i);
-int				ft_check_tminos4(char *str, int i);
-int				ft_check_tminos5(char *str, int i);
-int				ft_check_tminos6(char *str, int i);
-int				ft_check_tminos7(char *str, int i);
-int				ft_check_tminos8(char *str, int i);
-int				ft_check_tminos9(char *str, int i);
-int				ft_check_tminos10(char *str, int i);
-int				ft_check_tminos11(char *str, int i);
-int				ft_check_tminos12(char *str, int i);
-int				ft_check_tminos13(char *str, int i);
-int				ft_check_tminos14(char *str, int i);
-int				ft_check_tminos15(char *str, int i);
-int				ft_check_tminos16(char *str, int i);
-int				ft_check_tminos17(char *str, int i);
-int				ft_check_tminos18(char *str, int i);
-int				ft_check_tminos19(char *str, int i);
+int				ft_check_tminos(char *str, int i, int max);
+int				ft_check_tminos1(char *str, int i, int max);
+int				ft_check_tminos2(char *str, int i, int max);
+int				ft_check_tminos3(char *str, int i, int max);
+int				ft_check_tminos4(char *str, int i, int max);
+int				ft_check_tminos5(char *str, int i, int max);
+int				ft_check_tminos6(char *str, int i, int max);
+int				ft_check_tminos7(char *str, int i, int max);
+int				ft_check_tminos8(char *str, int i, int max);
+int				ft_check_tminos9(char *str, int i, int max);
+int				ft_check_tminos10(char *str, int i, int max);
+int				ft_check_tminos11(char *str, int i, int max);
+int				ft_check_tminos12(char *str, int i, int max);
+int				ft_check_tminos13(char *str, int i, int max);
+int				ft_check_tminos14(char *str, int i, int max);
+int				ft_check_tminos15(char *str, int i, int max);
+int				ft_check_tminos16(char *str, int i, int max);
+int				ft_check_tminos17(char *str, int i, int max);
+int				ft_check_tminos18(char *str, int i, int max);
+int				ft_check_tminos19(char *str, int i, int max);
 
-typedef	int		(*t_find)(char *str, int i);
+typedef	int		(*t_find)(char *str, int i, int max);
 
 typedef	int		(*t_can)(int o, int x, int y, t_place *p);
 
