@@ -6,7 +6,7 @@
 /*   By: ajehanno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 15:03:51 by ajehanno          #+#    #+#             */
-/*   Updated: 2016/12/08 20:49:45 by mfranc           ###   ########.fr       */
+/*   Updated: 2016/12/09 12:27:40 by mfranc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ int				under_backtrack(t_place *p, int x, int y, int o);
 int				ft_set_size_tab(int nb_map);
 void			ft_prepare(t_place *p, int *tminos, int sizetab, int size);
 char			**ft_build_tab(int sizetab, int x, int y);
-
-void			ft_putstr(const char *s);
-void			ft_putendl(const char *s);
-void			ft_puttab(char **tab);
-size_t			ft_strlen(const char *str);
 
 int				ft_can_write(int o, int x, int y, t_place *p);
 int				ft_can_write1(int o, int x, int y, t_place *p);

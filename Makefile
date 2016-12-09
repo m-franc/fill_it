@@ -6,7 +6,7 @@
 #    By: mfranc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 16:24:51 by mfranc            #+#    #+#              #
-#    Updated: 2016/12/08 21:46:56 by mfranc           ###   ########.fr        #
+#    Updated: 2016/12/09 12:41:04 by mfranc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,10 @@ NAME = fillit
 FLAGS = -Wall -Wextra -Werror
 
 CC = gcc $(FLAGS)
+
+DIR_LIB = Libft/
+
+LIB = $(DIR_LIB)libft.a
 
 SRC = ft_get_file.c				\
 	  main.c					\
@@ -39,25 +43,26 @@ SRC = ft_get_file.c				\
   	  ft_delete_9_13.c			\
 	  ft_delete_14_18.c			\
 	  algo_backtrack.c			\
-	  ft_putstr.c				\
-	  ft_putendl.c				\
-	  ft_puttab.c				\
-	  ft_strlen.c
 
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(LIB): 
+	@make -C $(DIR_LIB)
+
+$(NAME): $(OBJ) $(LIB)
 	$(CC) $^ -o $@
 
 %.o: %.c
-	$(CC) -o $@ -c $<
+	$(CC) -o $@ -c $< -I $(DIR_LIB)
 
 clean:
+	@make clean -C $(DIR_LIB)
 	rm -f $(OBJ)
 
 fclean: clean
+	@make fclean -C $(DIR_LIB)
 	rm -f $(NAME)
 
 re: fclean all
